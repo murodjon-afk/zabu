@@ -14,7 +14,7 @@ function getProviders(): Provider[] {
     {
       name: "groq",
       url: "https://api.groq.com/openai/v1/chat/completions",
-      key: process.env.ZABY_AI_GROQ ?? process.env.GROQ_API_KEY,
+      key: process.env.ZABU_AI_GROQ ?? process.env.GROQ_API_KEY,
       model: process.env.GROQ_MODEL ?? "openai/gpt-oss-120b",
     },
     {

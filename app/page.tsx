@@ -250,7 +250,7 @@ function DialogSection() {
               </div>
               <Link
                 href="/onboarding"
-                className="rounded-lg bg-white px-4 py-2 text-sm font-bold text-[#158F66] transition hover:bg-[#D9F36B] hover:text-[#0B3D2E]"
+                className="rounded-full bg-white px-4 py-2 text-sm font-bold text-[#158F66] transition hover:bg-[#D9F36B] hover:text-[#0B3D2E]"
               >
                 Начать диалог
               </Link>

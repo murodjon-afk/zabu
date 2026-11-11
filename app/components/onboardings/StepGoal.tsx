@@ -83,26 +83,17 @@ export function StepGoal({
     */
     <section className="mx-auto flex h-[calc(100dvh-88px)] min-h-[470px] w-full max-w-[880px] flex-col px-3 sm:h-[calc(100dvh-112px)] sm:px-0">
       {/* ЗАГОЛОВОК */}
-      <header className="shrink-0 pt-1 text-center sm:pt-3">
-  
 
-        <h1
-          className={`${h1Class} !text-[length:clamp(22px,4.2vh,42px)] !leading-[1.2]`}
-        >
-          Насколько хорошо вы{" "}
-          <em className="inline-block -rotate-2 rounded-xl bg-[#D9F36B] px-2.5 pb-0.5 not-italic text-[#0B3D2E] shadow-[3px_3px_0_#0B3D2E] sm:px-3 sm:shadow-[4px_4px_0_#0B3D2E]">
-            знаете язык
-          </em>
-          ?
-        </h1>
+<header className="shrink-0 pt-1 text-center sm:pt-3">
+  <h1 className="text-[length:clamp(26px,4.6vh,42px)] max-[600px]:text-[30px] font-black leading-[1.15] tracking-[-0.03em] text-[#0B3D2E] sm:text-[length:clamp(24px,4.6vh,46px)] sm:leading-[1.1]">
+    Насколько хорошо вы{" "}
+    <em className="inline-block -rotate-2 rounded-xl bg-[#D9F36B] px-2.5 pb-0.5 not-italic shadow-[3px_3px_0_#0B3D2E] sm:rounded-2xl sm:px-3 sm:shadow-[4px_4px_0_#0B3D2E]">
+      знаете язык
+    </em>
+    <span className="text-[#158F66]">?</span>
+  </h1>
+</header>
 
-        <div className="hidden [@media(min-height:720px)]:block">
-          <p className={subClass}>
-            Выберите свой текущий уровень. Мы адаптируем обучение под ваши
-            знания.
-          </p>
-        </div>
-      </header>
 
       {/* СТРОКИ УРОВНЕЙ */}
       <fieldset className="min-h-0 min-w-0 flex-1 border-0 p-0">
@@ -227,14 +218,7 @@ export function StepGoal({
           </button>
         </div>
 
-        <p
-          className="mt-3 text-xs font-medium text-[#0B3D2E]/50 lg:text-sm [@media(max-height:700px)]:hidden"
-          aria-live="polite"
-        >
-          {selected
-            ? "Уровень можно поменять в любой момент."
-            : "Выберите свой уровень, чтобы продолжить."}
-        </p>
+    
       </div>
     </section>
   );

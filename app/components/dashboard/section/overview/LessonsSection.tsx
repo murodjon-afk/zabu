@@ -145,8 +145,7 @@ export function LessonsSection({ ctx }: { ctx: DashboardCtx }) {
   }
 if (loading) return <LessonsSectionSkeleton />;
   return (
-    <div className="space-y-6">
-
+<div className="space-y-6 pb-[calc(7rem+env(safe-area-inset-bottom))] min-[900px]:pb-8">
       {/* HEADER */}
       <div>
         <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-[#D9F36B] px-3 py-1.5 text-xs font-black text-[#0B3D2E]">

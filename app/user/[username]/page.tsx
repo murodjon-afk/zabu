@@ -142,8 +142,28 @@ function ZabuDashboardContent() {  const params = useParams<{ username: string }
         onClose={() => setSidebarOpen(false)}
       />
 
-<main className="min-w-0 pt-16 md:pl-64">
-  <div className="mx-auto w-full max-w-6xl min-w-0 p-4 md:p-8">
+
+<main
+  className="
+    min-h-screen
+    min-w-0
+    w-full
+    pt-16
+    min-[900px]:pl-[72px]
+    min-[1280px]:pl-64
+  "
+>
+  <div className="
+    mx-auto
+    w-full
+    min-w-0
+    max-w-[1440px]
+    px-4
+    py-5
+    sm:px-6
+    lg:px-8
+    2xl:px-10
+  ">
     {error ? (
       <DashboardErrorState />
     ) : (
@@ -151,6 +171,7 @@ function ZabuDashboardContent() {  const params = useParams<{ username: string }
     )}
   </div>
 </main>
+
 
       <Modal modal={modal} onClose={closeModal} />
 

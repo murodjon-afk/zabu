@@ -347,8 +347,7 @@ export function DictionarySection({ ctx, learnedIds }: Props) {
   };
 
   return (
-    <main className="mx-auto max-w-6xl space-y-5 pb-12 text-[#0B3D2E] sm:space-y-6">
-      <div ref={topRef} className="scroll-mt-24" />
+<main className="mx-auto max-w-6xl space-y-5 pb-[calc(7rem+env(safe-area-inset-bottom))] text-[#0B3D2E] sm:space-y-6 min-[900px]:pb-5">      <div ref={topRef} className="scroll-mt-24" />
 {!section && (
   <header className="flex items-end justify-between gap-3">
     <div>

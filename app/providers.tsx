@@ -146,56 +146,63 @@ export function useDictionary() {
 }
 
 // Чтение языка из localStorage
+
 function DictionaryLoader() {
+  const { currentUser, loading: userLoading } = useUsers();
+
   useEffect(() => {
-    try {
-      const savedUser = localStorage.getItem("zabu:user");
-      const savedSession = localStorage.getItem("session");
+    if (userLoading) return;
 
-      const user = savedUser
-        ? JSON.parse(savedUser)
-        : savedSession
-          ? JSON.parse(savedSession)
-          : {};
-
-      const targetTongue = String(
-        user.targetTongue ?? ""
-      ).toLowerCase();
-
-      const languages: Record<string, string> = {
-        tajik: "tajik",
-        farsi: "farsi",
-        persian: "farsi",
-        russian: "russian",
-      };
-
-      const language = languages[targetTongue];
-
-      if (!language) {
-        dictionaryState = {
-          ...dictionaryState,
-          loading: false,
-          error: "Изучаемый язык не найден",
-        };
-
-        notifyDictionary();
-        return;
-      }
-
-      loadDictionary(language);
-    } catch {
+    if (!currentUser) {
       dictionaryState = {
         ...dictionaryState,
         loading: false,
-        error: "Ошибка чтения пользовательской сессии",
+        error: "Пользователь не найден",
+      };
+      notifyDictionary();
+      return;
+    }
+
+    const targetTongue = String(
+      currentUser.targetTongue ?? ""
+    )
+      .trim()
+      .toLowerCase();
+
+    const languages: Record<string, string> = {
+      tajik: "tajik",
+      tj: "tajik",
+      tjk: "tajik",
+      farsi: "farsi",
+      persian: "farsi",
+      fa: "farsi",
+      far: "farsi",
+      russian: "russian",
+      ru: "russian",
+      rus: "russian",
+    };
+
+    const language = languages[targetTongue];
+
+    if (!language) {
+      dictionaryState = {
+        ...dictionaryState,
+        loading: false,
+        error: `Неизвестный изучаемый язык: ${
+          targetTongue || "не указан"
+        }`,
       };
 
       notifyDictionary();
+      return;
     }
-  }, []);
+
+    void loadDictionary(language);
+  }, [currentUser, userLoading]);
 
   return null;
 }
+
 
 /* ───────────── USER PROVIDER ───────────── */
 
@@ -571,6 +578,7 @@ export function useLessons() {
   if (!ctx) throw new Error("useLessons должен быть внутри <Providers>");
   return ctx;
 }
+
 export function Providers({
   children,
   lessons = [],
@@ -580,10 +588,9 @@ export function Providers({
 }) {
   return (
     <SessionProvider>
-      <DictionaryLoader />
-
       <LessonsProvider initialLessons={lessons}>
         <UserProvider>
+          <DictionaryLoader />
           <SyncSession />
           {children}
         </UserProvider>

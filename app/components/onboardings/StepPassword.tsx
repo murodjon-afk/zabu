@@ -384,7 +384,7 @@ export function StepPassword({
     <form
       onSubmit={submit}
       noValidate
-      className="mx-auto w-full max-w-md rounded-[28px] border-2 border-[#0B3D2E]/10 bg-white p-5 shadow-[0_10px_0_rgba(11,61,46,0.1)] sm:p-7"
+      className="mx-auto w-full max-w-md  rounded-[28px] border-2 border-[#0B3D2E]/10 bg-white p-5 shadow-[0_10px_0_rgba(11,61,46,0.1)] sm:p-7"
     >
       {/* ЗАГОЛОВОК */}
       <div className="mb-6 flex items-start gap-4">
@@ -392,16 +392,14 @@ export function StepPassword({
           <ShieldCheck size={24} />
         </div>
 
-        <div className="min-w-0">
+        <div className="min-w-0 text-[length:clamp(26px,4.6vh,42px)] max-[600px]:text-[30px]">
           <h2 className="text-[26px] font-black leading-tight tracking-[-0.03em] text-[#0B3D2E]">
             Создайте{' '}
             <span className="inline-block -rotate-2 rounded-lg bg-[#158F66] px-2 pb-0.5 text-white">
               пароль
             </span>
           </h2>
-          <p className="mt-1.5 text-sm leading-relaxed text-[#0B3D2E]/60 [@media(max-height:760px)]:hidden">
-            Придумайте надёжный пароль для защиты вашего аккаунта ZABU.
-          </p>
+         
         </div>
       </div>
 
@@ -641,13 +639,7 @@ export function StepPassword({
         </button>
       </div>
 
-      {/* ПОЯСНЕНИЕ ПРО БЕЗОПАСНОСТЬ */}
-      <p className="mt-5 flex items-start gap-2 text-[11px] leading-relaxed text-[#0B3D2E]/50">
-        <ShieldCheck size={14} className="mt-px shrink-0 text-[#158F66]" />
-        Перед созданием аккаунта пароль проверяется по базе утечек. Наружу
-        уходят только первые 5 символов хеша — сам пароль никуда не
-        отправляется. Не передавайте пароль другим.
-      </p>
+    
     </form>
   );
 }

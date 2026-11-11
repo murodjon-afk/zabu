@@ -26,8 +26,27 @@ const Inter = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "ZABU — Learn Languages",
-  description: "Learn Tajik, Persian and English with ZABU.",
+  title: "ZABU — Учись без границ",
+  description: "Изучай языки вместе с ZABU",
+
+  applicationName: "ZABU",
+
+  manifest: "/manifest.webmanifest",
+
+  appleWebApp: {
+    capable: true,
+    title: "ZABU",
+    statusBarStyle: "default",
+  },
+
+  formatDetection: {
+    telephone: false,
+  },
+
+icons: {
+  icon: "/app-logo.png",
+  apple: "/app-logo.png",
+},
 };
 
 export default function RootLayout({

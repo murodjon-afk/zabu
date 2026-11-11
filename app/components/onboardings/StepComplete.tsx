@@ -175,26 +175,7 @@ export function StepComplete({
               </span>
             </h1>
 
-            <div className="[@media(max-height:700px)]:hidden">
-              <p className="mx-auto mt-5 max-w-[460px] text-sm leading-relaxed text-[#0B3D2E]/65 sm:text-base lg:mx-0 lg:text-lg">
-                Создай аккаунт, чтобы сохранить свой языковой паспорт,
-                отслеживать прогресс и продолжить обучение с любого
-                устройства.
-              </p>
-
-              <div className="mt-4 flex flex-wrap justify-center gap-2 lg:justify-start">
-                {PERKS.map((p, i) => (
-                  <span
-                    key={p.text}
-                    className="zabu-perk inline-flex items-center gap-1.5 rounded-full border-2 border-[#0B3D2E]/10 bg-white px-3 py-1 text-xs font-bold text-[#0B3D2E] shadow-[0_3px_0_rgba(11,61,46,0.1)]"
-                    style={{ animationDelay: `${0.2 + i * 0.12}s` }}
-                  >
-                    <span aria-hidden>{p.emoji}</span>
-                    {p.text}
-                  </span>
-                ))}
-              </div>
-            </div>
+         
 
             <p className="mt-5 inline-flex rounded-full bg-[#158F66] px-4 py-1.5 text-xs font-black text-white sm:mt-6 sm:text-sm">
               Зарегистрируйся и начни своё путешествие

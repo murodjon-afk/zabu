@@ -21,7 +21,7 @@ const USER_KEY = "zabu:user";
 const PROVIDER_KEY = "zabu:provider";
 
 const btn =
-  "flex h-[52px] w-full items-center justify-center gap-3 rounded-xl border border-[#DCE6DF] bg-white px-5 text-sm font-semibold text-[#25382E] transition hover:border-[#16865B] hover:bg-[#F8FBF9] disabled:opacity-50";
+  "flex h-[52px] w-full items-center justify-center gap-3 rounded-full border border-[#DCE6DF] bg-white px-5 text-sm font-semibold text-[#25382E] transition hover:border-[#16865B] hover:bg-[#F8FBF9] disabled:opacity-50";
 
 const spinner =
   "h-5 w-5 animate-spin rounded-full border-2 border-[#16865B] border-t-transparent";
@@ -144,7 +144,7 @@ export function SignOutButton() {
     <button
       type="button"
       onClick={() => signOut({ redirectTo: "/" })}
-      className="rounded-xl border border-[#DCE6DF] bg-white px-5 py-3 text-sm font-semibold text-[#35483C] transition hover:border-[#16865B]"
+      className=" border border-[#DCE6DF] bg-white px-5 py-3 text-sm font-semibold text-[#35483C] transition hover:border-[#16865B]"
     >
       Выйти из аккаунта
     </button>
